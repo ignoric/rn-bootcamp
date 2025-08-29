@@ -1,15 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView } from "react-native";
 import { AppProvider } from './src/providers/AppContext';
-import HomeScreen from './src/screens/HomeScreen';
+import AppNavigator from './src/navigation/AppNavigator';
+import { NativeBaseProvider } from 'native-base';
 
 export default function App() {
   return (
-    <AppProvider>
-      <SafeAreaView style={{ flex: 1 }}>
+    <NativeBaseProvider>
+      <AppProvider>
         <StatusBar style="auto" />
-        <HomeScreen />
-      </SafeAreaView>
-    </AppProvider>
+        <AppNavigator />
+      </AppProvider>
+    </NativeBaseProvider>
   );
 }
